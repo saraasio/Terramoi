@@ -12,4 +12,5 @@ class ParcelleController extends Controller
     public function getUneParcelle( $num ){
 	return view('parcelle') -> with( 'num' , $num );
 	}
+
 }
