@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ParcelleController;
+use App\Http\Controllers\EspacePersonnelGestionnaireController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -10,6 +12,7 @@ Route::get('/', function () {
 Route::get('/sites', [SiteController::class, 'getLesSites' ]);
 Route::get('/parcelles', [ParcelleController::class, 'getLesParcelles']);
 Route::get('/parcelles/{num}', [ParcelleController::class, 'getUneParcelle']);
+Route::get('/espacepersonnelgestionnaire', [EspacePersonnelGestionnaireController::class, 'getEspacePersonnelGestionnaire']);
 Route::get('/sites/parcelles', function () {
     return view('bienvenue sur la liste des parcelles ');
 });
