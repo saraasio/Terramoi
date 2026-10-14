@@ -10,13 +10,9 @@ Route::get('/', function () {
 });
 
 Route::get('/sites', [SiteController::class, 'getLesSites' ]);
-Route::get('/parcelles', [ParcelleController::class, 'getLesParcelles']);
-Route::get('/parcelles/{num}', [ParcelleController::class, 'getUneParcelle']);
+Route::get('/sites/parcelles', [ParcelleController::class, 'getLesParcelles']);
+Route::get('/sites/parcelles/{num}', [ParcelleController::class, 'getUneParcelle']);
 Route::get('/espacepersonnelgestionnaire', [EspacePersonnelGestionnaireController::class, 'getEspacePersonnelGestionnaire']);
-Route::get('/sites/parcelles', function () {
-    return view('bienvenue sur la liste des parcelles ');
-});
-
 Route::get('/sites/parcelles/parcelle/{num}', function ( $num ) {
     return view('Voici la parcelle n° $num : ');
 });
